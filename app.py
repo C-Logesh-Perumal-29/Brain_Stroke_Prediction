@@ -64,4 +64,7 @@ def predict():
 
 if __name__ == '__main__':
     os.makedirs('models', exist_ok=True)
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))  # Default to 5000 if no environment variable is set
+    app.run(host='0.0.0.0', port=port, debug=True)
+
+
